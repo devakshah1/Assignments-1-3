@@ -1,0 +1,3393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Devak Shah">
+
+<title>STAT468 Assigmnets 1-3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="A1_to_3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="A1_to_3_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="A1_to_3_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="A1_to_3_files/libs/quarto-html/popper.min.js"></script>
+<script src="A1_to_3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="A1_to_3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="A1_to_3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="A1_to_3_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="A1_to_3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="A1_to_3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="A1_to_3_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="A1_to_3.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">STAT468 Assigmnets 1-3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Devak Shah </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="d19b8067" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lets_plot <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>LetsPlot.setup_html()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+            <div id="RvUD6M"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.6.2/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("RvUD6M").appendChild(div);
+                    };
+                    var e = document.getElementById("RvUD6M");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+</div>
+<p><strong>ASSIGNMENT 1:</strong></p>
+<p>We will use the top 200 NHL point leaders in the 2024-25 season: (Note that W and F positions are for those players whose position is ambiguous. This does not represent a large proportion of our dataset, and so should be taken with a grain of salt).</p>
+<div id="5a0aa3b5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> pd.read_csv(<span class="st">"nhl_players_2025.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Rk</th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Pos</th>
+<th data-quarto-table-cell-role="th">GP</th>
+<th data-quarto-table-cell-role="th">G</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">PTS</th>
+<th data-quarto-table-cell-role="th">+/-</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">ATOI</th>
+<th data-quarto-table-cell-role="th">FOW</th>
+<th data-quarto-table-cell-role="th">FOL</th>
+<th data-quarto-table-cell-role="th">FO%</th>
+<th data-quarto-table-cell-role="th">BLK</th>
+<th data-quarto-table-cell-role="th">HIT</th>
+<th data-quarto-table-cell-role="th">TAKE</th>
+<th data-quarto-table-cell-role="th">GIVE</th>
+<th data-quarto-table-cell-role="th">Awards</th>
+<th data-quarto-table-cell-role="th">-9999</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Nikita Kucherov</td>
+<td>31</td>
+<td>TBL</td>
+<td>RW</td>
+<td>78</td>
+<td>37</td>
+<td>84</td>
+<td>121</td>
+<td>22</td>
+<td>...</td>
+<td>21:11</td>
+<td>1</td>
+<td>1</td>
+<td>50.0</td>
+<td>33</td>
+<td>23</td>
+<td>30</td>
+<td>122</td>
+<td>Ross-1</td>
+<td>kucheni01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Nathan MacKinnon</td>
+<td>29</td>
+<td>COL</td>
+<td>C</td>
+<td>79</td>
+<td>32</td>
+<td>84</td>
+<td>116</td>
+<td>25</td>
+<td>...</td>
+<td>22:47</td>
+<td>756</td>
+<td>758</td>
+<td>49.9</td>
+<td>58</td>
+<td>38</td>
+<td>27</td>
+<td>121</td>
+<td>NaN</td>
+<td>mackina01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Leon Draisaitl</td>
+<td>29</td>
+<td>EDM</td>
+<td>C</td>
+<td>71</td>
+<td>52</td>
+<td>54</td>
+<td>106</td>
+<td>32</td>
+<td>...</td>
+<td>21:31</td>
+<td>650</td>
+<td>546</td>
+<td>54.3</td>
+<td>27</td>
+<td>23</td>
+<td>35</td>
+<td>88</td>
+<td>Richard-1</td>
+<td>draisle01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>David Pastrňák</td>
+<td>28</td>
+<td>BOS</td>
+<td>RW</td>
+<td>82</td>
+<td>43</td>
+<td>63</td>
+<td>106</td>
+<td>0</td>
+<td>...</td>
+<td>20:11</td>
+<td>3</td>
+<td>5</td>
+<td>37.5</td>
+<td>24</td>
+<td>58</td>
+<td>40</td>
+<td>118</td>
+<td>NaN</td>
+<td>pastrda01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Mitch Marner</td>
+<td>27</td>
+<td>TOR</td>
+<td>RW</td>
+<td>81</td>
+<td>27</td>
+<td>75</td>
+<td>102</td>
+<td>18</td>
+<td>...</td>
+<td>21:19</td>
+<td>10</td>
+<td>24</td>
+<td>29.4</td>
+<td>40</td>
+<td>49</td>
+<td>56</td>
+<td>106</td>
+<td>NaN</td>
+<td>marnemi01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>196</td>
+<td>Casey Mittelstadt</td>
+<td>26</td>
+<td>2TM</td>
+<td>C</td>
+<td>81</td>
+<td>15</td>
+<td>25</td>
+<td>40</td>
+<td>-29</td>
+<td>...</td>
+<td>17:04</td>
+<td>443</td>
+<td>560</td>
+<td>44.2</td>
+<td>33</td>
+<td>30</td>
+<td>19</td>
+<td>80</td>
+<td>NaN</td>
+<td>mitteca01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>197</td>
+<td>Jake Walman</td>
+<td>28</td>
+<td>2TM</td>
+<td>D</td>
+<td>65</td>
+<td>7</td>
+<td>33</td>
+<td>40</td>
+<td>4</td>
+<td>...</td>
+<td>22:46</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>145</td>
+<td>57</td>
+<td>27</td>
+<td>80</td>
+<td>NaN</td>
+<td>walmaja01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>198</td>
+<td>Reilly Smith</td>
+<td>33</td>
+<td>2TM</td>
+<td>RW</td>
+<td>79</td>
+<td>13</td>
+<td>27</td>
+<td>40</td>
+<td>10</td>
+<td>...</td>
+<td>15:26</td>
+<td>4</td>
+<td>7</td>
+<td>36.4</td>
+<td>41</td>
+<td>48</td>
+<td>26</td>
+<td>70</td>
+<td>NaN</td>
+<td>smithre01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>199</td>
+<td>Blake Coleman</td>
+<td>33</td>
+<td>CGY</td>
+<td>C</td>
+<td>82</td>
+<td>15</td>
+<td>24</td>
+<td>39</td>
+<td>-2</td>
+<td>...</td>
+<td>17:41</td>
+<td>38</td>
+<td>41</td>
+<td>48.1</td>
+<td>66</td>
+<td>176</td>
+<td>31</td>
+<td>78</td>
+<td>NaN</td>
+<td>colembl01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>200</td>
+<td>Noah Dobson</td>
+<td>25</td>
+<td>NYI</td>
+<td>D</td>
+<td>71</td>
+<td>10</td>
+<td>29</td>
+<td>39</td>
+<td>-16</td>
+<td>...</td>
+<td>23:16</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>126</td>
+<td>57</td>
+<td>36</td>
+<td>108</td>
+<td>NaN</td>
+<td>dobsono01</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 32 columns</p>
+</div>
+</div>
+</div>
+<p>Q1:</p>
+<div id="a4c17bda" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ggplot(stats, aes(x <span class="op">=</span> <span class="st">"G"</span>, y <span class="op">=</span> <span class="st">"A"</span>, color <span class="op">=</span> <span class="st">"Pos"</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_point()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> labs(x <span class="op">=</span> <span class="st">"Goals"</span>, y <span class="op">=</span> <span class="st">"Assists"</span>, color <span class="op">=</span> <span class="st">"Position"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+   <div id="vroTjM"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("vroTjM");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"Pos":["RW","C","C","RW","RW","C","LW","C","D","C","LW","C","LW","C","W","RW","C","C","C","C","C","C","D","C","C","C","LW","LW","LW","C","C","D","RW","F","RW","C","LW","LW","LW","C","C","C","RW","RW","C","C","C","RW","C","C","C","D","RW","C","D","LW","C","C","C","RW","RW","LW","D","D","C","C","C","RW","RW","F","LW","C","RW","C","C","LW","D","C","D","C","C","C","LW","RW","C","C","RW","C","LW","LW","F","LW","C","C","C","C","C","D","D","LW","LW","C","C","C","LW","C","C","LW","C","LW","D","C","RW","C","D","C","C","LW","LW","C","C","C","D","LW","C","LW","RW","RW","C","D","C","C","C","LW","C","C","LW","RW","RW","D","RW","C","F","LW","D","C","C","LW","LW","C","LW","D","F","RW","C","D","C","LW","D","RW","LW","LW","C","C","C","LW","LW","D","LW","D","C","RW","C","C","RW","D","RW","RW","C","LW","RW","D","RW","LW","D","C","W","RW","D","D","C","LW","D","RW","D","C","D","RW","C","D"],
+"G":[37.0,32.0,52.0,43.0,27.0,26.0,41.0,28.0,30.0,33.0,35.0,30.0,37.0,30.0,21.0,32.0,39.0,45.0,27.0,30.0,42.0,29.0,23.0,39.0,21.0,41.0,27.0,35.0,24.0,33.0,31.0,16.0,24.0,29.0,31.0,38.0,27.0,35.0,44.0,44.0,20.0,33.0,37.0,39.0,27.0,36.0,30.0,35.0,22.0,35.0,26.0,17.0,27.0,23.0,14.0,28.0,32.0,35.0,21.0,19.0,36.0,20.0,15.0,6.0,30.0,22.0,25.0,31.0,33.0,25.0,24.0,26.0,26.0,20.0,31.0,28.0,14.0,20.0,10.0,32.0,22.0,27.0,35.0,27.0,24.0,27.0,21.0,26.0,17.0,29.0,15.0,20.0,33.0,28.0,24.0,26.0,19.0,11.0,7.0,22.0,25.0,21.0,26.0,21.0,29.0,23.0,31.0,29.0,30.0,19.0,11.0,20.0,26.0,21.0,15.0,27.0,20.0,21.0,35.0,22.0,23.0,25.0,5.0,18.0,13.0,23.0,25.0,19.0,15.0,16.0,16.0,18.0,18.0,16.0,20.0,26.0,28.0,24.0,20.0,20.0,24.0,17.0,22.0,23.0,8.0,14.0,16.0,23.0,24.0,20.0,22.0,8.0,25.0,21.0,20.0,9.0,15.0,20.0,7.0,20.0,17.0,27.0,17.0,15.0,18.0,21.0,20.0,7.0,27.0,10.0,19.0,14.0,20.0,8.0,25.0,14.0,20.0,19.0,14.0,18.0,12.0,18.0,22.0,22.0,7.0,10.0,19.0,20.0,1.0,9.0,23.0,18.0,7.0,19.0,9.0,15.0,7.0,13.0,15.0,10.0],
+"A":[84.0,84.0,54.0,63.0,75.0,74.0,56.0,66.0,62.0,58.0,55.0,60.0,52.0,59.0,67.0,56.0,48.0,39.0,56.0,52.0,40.0,53.0,59.0,42.0,60.0,39.0,53.0,45.0,55.0,45.0,45.0,60.0,52.0,45.0,43.0,36.0,46.0,38.0,29.0,28.0,51.0,38.0,33.0,31.0,43.0,34.0,40.0,35.0,48.0,34.0,42.0,51.0,41.0,44.0,53.0,39.0,35.0,32.0,46.0,48.0,31.0,46.0,51.0,60.0,36.0,44.0,40.0,34.0,32.0,38.0,39.0,37.0,37.0,43.0,31.0,34.0,48.0,42.0,51.0,29.0,39.0,34.0,25.0,33.0,36.0,32.0,38.0,33.0,41.0,29.0,43.0,37.0,24.0,29.0,33.0,31.0,38.0,46.0,50.0,35.0,31.0,35.0,30.0,34.0,26.0,31.0,23.0,25.0,24.0,35.0,42.0,33.0,27.0,32.0,38.0,26.0,33.0,32.0,17.0,30.0,28.0,26.0,46.0,33.0,38.0,28.0,25.0,31.0,35.0,34.0,34.0,32.0,32.0,33.0,29.0,23.0,20.0,24.0,28.0,27.0,23.0,30.0,25.0,24.0,39.0,33.0,31.0,23.0,22.0,26.0,24.0,38.0,21.0,25.0,25.0,36.0,30.0,25.0,38.0,25.0,28.0,18.0,28.0,30.0,27.0,24.0,24.0,37.0,17.0,34.0,25.0,30.0,23.0,35.0,18.0,29.0,23.0,23.0,28.0,24.0,29.0,23.0,19.0,19.0,34.0,31.0,22.0,20.0,39.0,31.0,17.0,22.0,33.0,21.0,31.0,25.0,33.0,27.0,24.0,29.0]
+},
+"mapping":{
+"x":"G",
+"y":"A",
+"color":"Pos"
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"Rk"
+},{
+"type":"str",
+"column":"Player"
+},{
+"type":"int",
+"column":"Age"
+},{
+"type":"str",
+"column":"Team"
+},{
+"type":"str",
+"column":"Pos"
+},{
+"type":"int",
+"column":"GP"
+},{
+"type":"int",
+"column":"G"
+},{
+"type":"int",
+"column":"A"
+},{
+"type":"int",
+"column":"PTS"
+},{
+"type":"int",
+"column":"+/-"
+},{
+"type":"int",
+"column":"PIM"
+},{
+"type":"int",
+"column":"EVG"
+},{
+"type":"int",
+"column":"PPG"
+},{
+"type":"int",
+"column":"SHG"
+},{
+"type":"int",
+"column":"GWG"
+},{
+"type":"int",
+"column":"EV"
+},{
+"type":"int",
+"column":"PP"
+},{
+"type":"int",
+"column":"SH"
+},{
+"type":"int",
+"column":"SOG"
+},{
+"type":"float",
+"column":"SPCT"
+},{
+"type":"int",
+"column":"TSA"
+},{
+"type":"str",
+"column":"TOI"
+},{
+"type":"str",
+"column":"ATOI"
+},{
+"type":"int",
+"column":"FOW"
+},{
+"type":"int",
+"column":"FOL"
+},{
+"type":"float",
+"column":"FO%"
+},{
+"type":"int",
+"column":"BLK"
+},{
+"type":"int",
+"column":"HIT"
+},{
+"type":"int",
+"column":"TAKE"
+},{
+"type":"int",
+"column":"GIVE"
+},{
+"type":"str",
+"column":"Awards"
+},{
+"type":"str",
+"column":"-9999"
+}]
+},
+"guides":{
+"x":{
+"title":"Goals"
+},
+"y":{
+"title":"Assists"
+},
+"color":{
+"title":"Position"
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"point",
+"mapping":{
+},
+"data_meta":{
+},
+"data":{
+}
+}],
+"metainfo_list":[],
+"spec_id":"1"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>Q2: Visulaizing the relationship between player position and the points they score in a season:</p>
+<div id="2d9a59e4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    ggplot(stats, aes(x <span class="op">=</span> <span class="st">"Pos"</span>, y <span class="op">=</span> <span class="st">"PTS"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_boxplot()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> labs(x <span class="op">=</span> <span class="st">"Position"</span>, y <span class="op">=</span> <span class="st">"Points"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+   <div id="kRScKR"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("kRScKR");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+},
+"mapping":{
+"x":"Pos",
+"y":"PTS"
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"Rk"
+},{
+"type":"str",
+"column":"Player"
+},{
+"type":"int",
+"column":"Age"
+},{
+"type":"str",
+"column":"Team"
+},{
+"type":"str",
+"column":"Pos"
+},{
+"type":"int",
+"column":"GP"
+},{
+"type":"int",
+"column":"G"
+},{
+"type":"int",
+"column":"A"
+},{
+"type":"int",
+"column":"PTS"
+},{
+"type":"int",
+"column":"+/-"
+},{
+"type":"int",
+"column":"PIM"
+},{
+"type":"int",
+"column":"EVG"
+},{
+"type":"int",
+"column":"PPG"
+},{
+"type":"int",
+"column":"SHG"
+},{
+"type":"int",
+"column":"GWG"
+},{
+"type":"int",
+"column":"EV"
+},{
+"type":"int",
+"column":"PP"
+},{
+"type":"int",
+"column":"SH"
+},{
+"type":"int",
+"column":"SOG"
+},{
+"type":"float",
+"column":"SPCT"
+},{
+"type":"int",
+"column":"TSA"
+},{
+"type":"str",
+"column":"TOI"
+},{
+"type":"str",
+"column":"ATOI"
+},{
+"type":"int",
+"column":"FOW"
+},{
+"type":"int",
+"column":"FOL"
+},{
+"type":"float",
+"column":"FO%"
+},{
+"type":"int",
+"column":"BLK"
+},{
+"type":"int",
+"column":"HIT"
+},{
+"type":"int",
+"column":"TAKE"
+},{
+"type":"int",
+"column":"GIVE"
+},{
+"type":"str",
+"column":"Awards"
+},{
+"type":"str",
+"column":"-9999"
+}]
+},
+"guides":{
+"x":{
+"title":"Position"
+},
+"y":{
+"title":"Points"
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"boxplot",
+"mapping":{
+},
+"data_meta":{
+},
+"data":{
+"..middle..":[56.0,59.0,54.0,47.0,64.5,58.0],
+"..lower..":[44.5,50.0,46.0,42.0,64.5,47.0],
+"..upper..":[69.0,70.5,66.0,61.5,64.5,63.0],
+"..ymin..":[40.0,39.0,40.0,39.0,64.5,46.0],
+"..ymax..":[102.0,100.0,90.0,82.0,64.5,74.0],
+"Pos":["RW","C","LW","D","W","F"]
+}
+},{
+"geom":"point",
+"stat":"boxplot_outlier",
+"mapping":{
+},
+"show_legend":false,
+"data_meta":{
+},
+"data":{
+"..middle..":[56.0,56.0,59.0,59.0,54.0,47.0,64.5,64.5,58.0],
+"..lower..":[44.5,44.5,50.0,50.0,46.0,42.0,64.5,64.5,47.0],
+"..upper..":[69.0,69.0,70.5,70.5,66.0,61.5,64.5,64.5,63.0],
+"..ymin..":[40.0,40.0,39.0,39.0,40.0,39.0,64.5,64.5,46.0],
+"..ymax..":[102.0,102.0,100.0,100.0,90.0,82.0,64.5,64.5,74.0],
+"Pos":["RW","RW","C","C","LW","D","W","W","F"],
+"PTS":[121.0,106.0,116.0,106.0,97.0,92.0,88.0,41.0,NaN]
+}
+}],
+"metainfo_list":[],
+"spec_id":"2"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>Q3:</p>
+<div id="9d9c860b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ggplot(stats, aes(x <span class="op">=</span> <span class="st">"Pos"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_bar()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> labs(x <span class="op">=</span> <span class="st">"Position"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+   <div id="TyYhc1"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("TyYhc1");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+},
+"mapping":{
+"x":"Pos"
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"Rk"
+},{
+"type":"str",
+"column":"Player"
+},{
+"type":"int",
+"column":"Age"
+},{
+"type":"str",
+"column":"Team"
+},{
+"type":"str",
+"column":"Pos"
+},{
+"type":"int",
+"column":"GP"
+},{
+"type":"int",
+"column":"G"
+},{
+"type":"int",
+"column":"A"
+},{
+"type":"int",
+"column":"PTS"
+},{
+"type":"int",
+"column":"+/-"
+},{
+"type":"int",
+"column":"PIM"
+},{
+"type":"int",
+"column":"EVG"
+},{
+"type":"int",
+"column":"PPG"
+},{
+"type":"int",
+"column":"SHG"
+},{
+"type":"int",
+"column":"GWG"
+},{
+"type":"int",
+"column":"EV"
+},{
+"type":"int",
+"column":"PP"
+},{
+"type":"int",
+"column":"SH"
+},{
+"type":"int",
+"column":"SOG"
+},{
+"type":"float",
+"column":"SPCT"
+},{
+"type":"int",
+"column":"TSA"
+},{
+"type":"str",
+"column":"TOI"
+},{
+"type":"str",
+"column":"ATOI"
+},{
+"type":"int",
+"column":"FOW"
+},{
+"type":"int",
+"column":"FOL"
+},{
+"type":"float",
+"column":"FO%"
+},{
+"type":"int",
+"column":"BLK"
+},{
+"type":"int",
+"column":"HIT"
+},{
+"type":"int",
+"column":"TAKE"
+},{
+"type":"int",
+"column":"GIVE"
+},{
+"type":"str",
+"column":"Awards"
+},{
+"type":"str",
+"column":"-9999"
+}]
+},
+"guides":{
+"x":{
+"title":"Position"
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"bar",
+"mapping":{
+},
+"data_meta":{
+},
+"data":{
+"..count..":[34.0,87.0,41.0,31.0,2.0,5.0],
+"Pos":["RW","C","LW","D","W","F"]
+}
+}],
+"metainfo_list":[],
+"spec_id":"3"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>Q4:</p>
+<div id="d44248be" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>player_points <span class="op">=</span> stats[[<span class="st">"Player"</span>, <span class="st">"G"</span>]]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>filtered_player_points <span class="op">=</span> player_points.query(<span class="st">"G &gt; 40"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sorted_filtered_player_points <span class="op">=</span> filtered_player_points.sort_values(by <span class="op">=</span> <span class="st">"G"</span>, ascending <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sorted_filtered_player_points</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">G</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Leon Draisaitl</td>
+<td>52</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>William Nylander</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">38</td>
+<td>Alex Ovechkin</td>
+<td>44</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">39</td>
+<td>Tage Thompson</td>
+<td>44</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>David Pastrňák</td>
+<td>43</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">20</td>
+<td>Brayden Point</td>
+<td>42</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Kyle Connor</td>
+<td>41</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25</td>
+<td>Jake Guentzel</td>
+<td>41</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>With the following pipeline, I will can answer who scored 40+ goals in the NHL during the 2024-25 season. Further, we can see who the top goal scorers are since it it sorted.</p>
+<p>Q5:</p>
+<div id="f0af3e0f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>stats.groupby(<span class="st">'Age'</span>)[[<span class="st">"PTS"</span>, <span class="st">"G"</span>, <span class="st">"A"</span>]].agg(<span class="st">'mean'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PTS</th>
+<th data-quarto-table-cell-role="th">G</th>
+<th data-quarto-table-cell-role="th">A</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>63.000000</td>
+<td>25.000000</td>
+<td>38.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>56.000000</td>
+<td>20.500000</td>
+<td>35.500000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">20</td>
+<td>57.333333</td>
+<td>21.000000</td>
+<td>36.333333</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21</td>
+<td>52.600000</td>
+<td>21.200000</td>
+<td>31.400000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22</td>
+<td>54.153846</td>
+<td>21.384615</td>
+<td>32.769231</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">23</td>
+<td>53.588235</td>
+<td>19.823529</td>
+<td>33.764706</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24</td>
+<td>57.100000</td>
+<td>25.300000</td>
+<td>31.800000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25</td>
+<td>62.272727</td>
+<td>21.909091</td>
+<td>40.363636</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26</td>
+<td>66.187500</td>
+<td>24.437500</td>
+<td>41.750000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">27</td>
+<td>68.571429</td>
+<td>27.285714</td>
+<td>41.285714</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">28</td>
+<td>67.333333</td>
+<td>28.375000</td>
+<td>38.958333</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29</td>
+<td>59.764706</td>
+<td>23.941176</td>
+<td>35.823529</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">30</td>
+<td>55.000000</td>
+<td>20.454545</td>
+<td>34.545455</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">31</td>
+<td>58.625000</td>
+<td>20.250000</td>
+<td>38.375000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">32</td>
+<td>54.000000</td>
+<td>23.000000</td>
+<td>31.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">33</td>
+<td>51.000000</td>
+<td>20.200000</td>
+<td>30.800000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">34</td>
+<td>63.125000</td>
+<td>25.750000</td>
+<td>37.375000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35</td>
+<td>46.666667</td>
+<td>13.666667</td>
+<td>33.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36</td>
+<td>55.000000</td>
+<td>22.000000</td>
+<td>33.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">37</td>
+<td>65.500000</td>
+<td>22.000000</td>
+<td>43.500000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">38</td>
+<td>50.000000</td>
+<td>16.000000</td>
+<td>34.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">39</td>
+<td>73.000000</td>
+<td>44.000000</td>
+<td>29.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This is giving me a breakdown of the mean points, goals, and assists scored by players in the top 200 point-scorers last season, broken down by age group.</p>
+<p>Q6: We will read using commas, and write using tab (’ ’ or ’)</p>
+<div id="b0dad8ca" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>comma_delim_df <span class="op">=</span> pd.read_csv(<span class="st">'nhl_players_2025.csv'</span>, sep<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>comma_delim_df</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>comma_delim_df.to_csv(<span class="st">'players_tab_delim.csv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>ASSIGNMNENT 2</strong></p>
+<ol type="1">
+<li>Visualize</li>
+</ol>
+<div id="33435571" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> pd.read_csv(<span class="st">"nhl_players_2025.csv"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Rk</th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Pos</th>
+<th data-quarto-table-cell-role="th">GP</th>
+<th data-quarto-table-cell-role="th">G</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">PTS</th>
+<th data-quarto-table-cell-role="th">+/-</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">ATOI</th>
+<th data-quarto-table-cell-role="th">FOW</th>
+<th data-quarto-table-cell-role="th">FOL</th>
+<th data-quarto-table-cell-role="th">FO%</th>
+<th data-quarto-table-cell-role="th">BLK</th>
+<th data-quarto-table-cell-role="th">HIT</th>
+<th data-quarto-table-cell-role="th">TAKE</th>
+<th data-quarto-table-cell-role="th">GIVE</th>
+<th data-quarto-table-cell-role="th">Awards</th>
+<th data-quarto-table-cell-role="th">-9999</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Nikita Kucherov</td>
+<td>31</td>
+<td>TBL</td>
+<td>RW</td>
+<td>78</td>
+<td>37</td>
+<td>84</td>
+<td>121</td>
+<td>22</td>
+<td>...</td>
+<td>21:11</td>
+<td>1</td>
+<td>1</td>
+<td>50.0</td>
+<td>33</td>
+<td>23</td>
+<td>30</td>
+<td>122</td>
+<td>Ross-1</td>
+<td>kucheni01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Nathan MacKinnon</td>
+<td>29</td>
+<td>COL</td>
+<td>C</td>
+<td>79</td>
+<td>32</td>
+<td>84</td>
+<td>116</td>
+<td>25</td>
+<td>...</td>
+<td>22:47</td>
+<td>756</td>
+<td>758</td>
+<td>49.9</td>
+<td>58</td>
+<td>38</td>
+<td>27</td>
+<td>121</td>
+<td>NaN</td>
+<td>mackina01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Leon Draisaitl</td>
+<td>29</td>
+<td>EDM</td>
+<td>C</td>
+<td>71</td>
+<td>52</td>
+<td>54</td>
+<td>106</td>
+<td>32</td>
+<td>...</td>
+<td>21:31</td>
+<td>650</td>
+<td>546</td>
+<td>54.3</td>
+<td>27</td>
+<td>23</td>
+<td>35</td>
+<td>88</td>
+<td>Richard-1</td>
+<td>draisle01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>David Pastrňák</td>
+<td>28</td>
+<td>BOS</td>
+<td>RW</td>
+<td>82</td>
+<td>43</td>
+<td>63</td>
+<td>106</td>
+<td>0</td>
+<td>...</td>
+<td>20:11</td>
+<td>3</td>
+<td>5</td>
+<td>37.5</td>
+<td>24</td>
+<td>58</td>
+<td>40</td>
+<td>118</td>
+<td>NaN</td>
+<td>pastrda01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Mitch Marner</td>
+<td>27</td>
+<td>TOR</td>
+<td>RW</td>
+<td>81</td>
+<td>27</td>
+<td>75</td>
+<td>102</td>
+<td>18</td>
+<td>...</td>
+<td>21:19</td>
+<td>10</td>
+<td>24</td>
+<td>29.4</td>
+<td>40</td>
+<td>49</td>
+<td>56</td>
+<td>106</td>
+<td>NaN</td>
+<td>marnemi01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>196</td>
+<td>Casey Mittelstadt</td>
+<td>26</td>
+<td>2TM</td>
+<td>C</td>
+<td>81</td>
+<td>15</td>
+<td>25</td>
+<td>40</td>
+<td>-29</td>
+<td>...</td>
+<td>17:04</td>
+<td>443</td>
+<td>560</td>
+<td>44.2</td>
+<td>33</td>
+<td>30</td>
+<td>19</td>
+<td>80</td>
+<td>NaN</td>
+<td>mitteca01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>197</td>
+<td>Jake Walman</td>
+<td>28</td>
+<td>2TM</td>
+<td>D</td>
+<td>65</td>
+<td>7</td>
+<td>33</td>
+<td>40</td>
+<td>4</td>
+<td>...</td>
+<td>22:46</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>145</td>
+<td>57</td>
+<td>27</td>
+<td>80</td>
+<td>NaN</td>
+<td>walmaja01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>198</td>
+<td>Reilly Smith</td>
+<td>33</td>
+<td>2TM</td>
+<td>RW</td>
+<td>79</td>
+<td>13</td>
+<td>27</td>
+<td>40</td>
+<td>10</td>
+<td>...</td>
+<td>15:26</td>
+<td>4</td>
+<td>7</td>
+<td>36.4</td>
+<td>41</td>
+<td>48</td>
+<td>26</td>
+<td>70</td>
+<td>NaN</td>
+<td>smithre01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>199</td>
+<td>Blake Coleman</td>
+<td>33</td>
+<td>CGY</td>
+<td>C</td>
+<td>82</td>
+<td>15</td>
+<td>24</td>
+<td>39</td>
+<td>-2</td>
+<td>...</td>
+<td>17:41</td>
+<td>38</td>
+<td>41</td>
+<td>48.1</td>
+<td>66</td>
+<td>176</td>
+<td>31</td>
+<td>78</td>
+<td>NaN</td>
+<td>colembl01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>200</td>
+<td>Noah Dobson</td>
+<td>25</td>
+<td>NYI</td>
+<td>D</td>
+<td>71</td>
+<td>10</td>
+<td>29</td>
+<td>39</td>
+<td>-16</td>
+<td>...</td>
+<td>23:16</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>126</td>
+<td>57</td>
+<td>36</td>
+<td>108</td>
+<td>NaN</td>
+<td>dobsono01</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 32 columns</p>
+</div>
+</div>
+</div>
+<div id="0dfbd847" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    ggplot(stats, aes(x<span class="op">=</span><span class="st">"+/-"</span>, y<span class="op">=</span><span class="st">"PTS"</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_point(aes(colour<span class="op">=</span><span class="st">"Pos"</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> labs(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="st">"+/-"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> <span class="st">"Points"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"Position"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"+/- generally increases as players get more points"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        subtitle<span class="op">=</span><span class="st">"Defensemen are an exception because points aren't a as good of an indicator of their performance"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        caption<span class="op">=</span><span class="st">"Source: https://www.hockey-reference.com"</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> theme(</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        axis_title_x<span class="op">=</span>element_text(color<span class="op">=</span><span class="st">"blue"</span>, face<span class="op">=</span><span class="st">"bold"</span>),</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        axis_title_y<span class="op">=</span>element_text(color<span class="op">=</span><span class="st">"blue"</span>, face<span class="op">=</span><span class="st">"bold"</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_label(x<span class="op">=</span><span class="dv">14</span>, y<span class="op">=</span><span class="dv">121</span>, label <span class="op">=</span> <span class="st">"Kucherov"</span>, color<span class="op">=</span><span class="st">"black"</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_point(data<span class="op">=</span>stats.query(<span class="st">'Player == "Nikita Kucherov"'</span>), </span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                 mapping<span class="op">=</span>aes(x<span class="op">=</span><span class="st">"+/-"</span>, y<span class="op">=</span><span class="st">"PTS"</span>), </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                 color<span class="op">=</span><span class="st">"black"</span>, shape<span class="op">=</span><span class="dv">17</span>, size<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+   <div id="JAUdzg"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("JAUdzg");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"Pos":["RW","C","C","RW","RW","C","LW","C","D","C","LW","C","LW","C","W","RW","C","C","C","C","C","C","D","C","C","C","LW","LW","LW","C","C","D","RW","F","RW","C","LW","LW","LW","C","C","C","RW","RW","C","C","C","RW","C","C","C","D","RW","C","D","LW","C","C","C","RW","RW","LW","D","D","C","C","C","RW","RW","F","LW","C","RW","C","C","LW","D","C","D","C","C","C","LW","RW","C","C","RW","C","LW","LW","F","LW","C","C","C","C","C","D","D","LW","LW","C","C","C","LW","C","C","LW","C","LW","D","C","RW","C","D","C","C","LW","LW","C","C","C","D","LW","C","LW","RW","RW","C","D","C","C","C","LW","C","C","LW","RW","RW","D","RW","C","F","LW","D","C","C","LW","LW","C","LW","D","F","RW","C","D","C","LW","D","RW","LW","LW","C","C","C","LW","LW","D","LW","D","C","RW","C","C","RW","D","RW","RW","C","LW","RW","D","RW","LW","D","C","W","RW","D","D","C","LW","D","RW","D","C","D","RW","C","D"],
+"PTS":[121.0,116.0,106.0,106.0,102.0,100.0,97.0,94.0,92.0,91.0,90.0,90.0,89.0,89.0,88.0,88.0,87.0,84.0,83.0,82.0,82.0,82.0,82.0,81.0,81.0,80.0,80.0,80.0,79.0,78.0,76.0,76.0,76.0,74.0,74.0,74.0,73.0,73.0,73.0,72.0,71.0,71.0,70.0,70.0,70.0,70.0,70.0,70.0,70.0,69.0,68.0,68.0,68.0,67.0,67.0,67.0,67.0,67.0,67.0,67.0,67.0,66.0,66.0,66.0,66.0,66.0,65.0,65.0,65.0,63.0,63.0,63.0,63.0,63.0,62.0,62.0,62.0,62.0,61.0,61.0,61.0,61.0,60.0,60.0,60.0,59.0,59.0,59.0,58.0,58.0,58.0,57.0,57.0,57.0,57.0,57.0,57.0,57.0,57.0,57.0,56.0,56.0,56.0,55.0,55.0,54.0,54.0,54.0,54.0,54.0,53.0,53.0,53.0,53.0,53.0,53.0,53.0,53.0,52.0,52.0,51.0,51.0,51.0,51.0,51.0,51.0,50.0,50.0,50.0,50.0,50.0,50.0,50.0,49.0,49.0,49.0,48.0,48.0,48.0,47.0,47.0,47.0,47.0,47.0,47.0,47.0,47.0,46.0,46.0,46.0,46.0,46.0,46.0,46.0,45.0,45.0,45.0,45.0,45.0,45.0,45.0,45.0,45.0,45.0,45.0,45.0,44.0,44.0,44.0,44.0,44.0,44.0,43.0,43.0,43.0,43.0,43.0,42.0,42.0,42.0,41.0,41.0,41.0,41.0,41.0,41.0,41.0,40.0,40.0,40.0,40.0,40.0,40.0,40.0,40.0,40.0,40.0,40.0,39.0,39.0],
+"+/-":[22.0,25.0,32.0,0.0,18.0,20.0,17.0,32.0,28.0,-20.0,33.0,-12.0,-9.0,19.0,5.0,13.0,12.0,10.0,5.0,13.0,17.0,2.0,12.0,6.0,20.0,18.0,-15.0,10.0,0.0,11.0,-27.0,2.0,-17.0,7.0,29.0,10.0,1.0,22.0,15.0,-2.0,1.0,2.0,9.0,-13.0,12.0,23.0,-16.0,-22.0,-6.0,9.0,-9.0,11.0,-1.0,-36.0,14.0,18.0,12.0,-17.0,14.0,22.0,16.0,27.0,18.0,-2.0,40.0,0.0,1.0,-21.0,20.0,-31.0,14.0,21.0,-18.0,-15.0,-15.0,-13.0,17.0,-22.0,9.0,-3.0,8.0,9.0,-7.0,-4.0,3.0,30.0,-16.0,0.0,-7.0,7.0,-23.0,10.0,3.0,-4.0,2.0,19.0,19.0,-14.0,18.0,-3.0,19.0,-29.0,8.0,0.0,0.0,16.0,4.0,3.0,-21.0,0.0,-24.0,13.0,7.0,-23.0,-8.0,-36.0,-14.0,4.0,2.0,0.0,26.0,-15.0,17.0,4.0,-9.0,-7.0,-25.0,-13.0,-8.0,32.0,-24.0,14.0,3.0,3.0,4.0,-6.0,-15.0,-17.0,-8.0,17.0,6.0,-4.0,15.0,17.0,18.0,-8.0,-17.0,-39.0,36.0,-6.0,0.0,-5.0,2.0,2.0,6.0,17.0,1.0,12.0,1.0,5.0,-13.0,36.0,17.0,-10.0,-15.0,-9.0,8.0,-9.0,9.0,30.0,4.0,-2.0,0.0,20.0,-9.0,0.0,-12.0,22.0,4.0,-14.0,-11.0,-22.0,-8.0,13.0,-8.0,-3.0,7.0,1.0,-6.0,8.0,17.0,17.0,-13.0,-1.0,12.0,-29.0,4.0,10.0,-2.0,-16.0]
+},
+"mapping":{
+"x":"+/-",
+"y":"PTS"
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"Rk"
+},{
+"type":"str",
+"column":"Player"
+},{
+"type":"int",
+"column":"Age"
+},{
+"type":"str",
+"column":"Team"
+},{
+"type":"str",
+"column":"Pos"
+},{
+"type":"int",
+"column":"GP"
+},{
+"type":"int",
+"column":"G"
+},{
+"type":"int",
+"column":"A"
+},{
+"type":"int",
+"column":"PTS"
+},{
+"type":"int",
+"column":"+/-"
+},{
+"type":"int",
+"column":"PIM"
+},{
+"type":"int",
+"column":"EVG"
+},{
+"type":"int",
+"column":"PPG"
+},{
+"type":"int",
+"column":"SHG"
+},{
+"type":"int",
+"column":"GWG"
+},{
+"type":"int",
+"column":"EV"
+},{
+"type":"int",
+"column":"PP"
+},{
+"type":"int",
+"column":"SH"
+},{
+"type":"int",
+"column":"SOG"
+},{
+"type":"float",
+"column":"SPCT"
+},{
+"type":"int",
+"column":"TSA"
+},{
+"type":"str",
+"column":"TOI"
+},{
+"type":"str",
+"column":"ATOI"
+},{
+"type":"int",
+"column":"FOW"
+},{
+"type":"int",
+"column":"FOL"
+},{
+"type":"float",
+"column":"FO%"
+},{
+"type":"int",
+"column":"BLK"
+},{
+"type":"int",
+"column":"HIT"
+},{
+"type":"int",
+"column":"TAKE"
+},{
+"type":"int",
+"column":"GIVE"
+},{
+"type":"str",
+"column":"Awards"
+},{
+"type":"str",
+"column":"-9999"
+}]
+},
+"ggtitle":{
+"text":"+/- generally increases as players get more points",
+"subtitle":"Defensemen are an exception because points aren't a as good of an indicator of their performance"
+},
+"caption":{
+"text":"Source: https://www.hockey-reference.com"
+},
+"guides":{
+"x":{
+"title":"+/-"
+},
+"y":{
+"title":"Points"
+},
+"colour":{
+"title":"Position"
+}
+},
+"theme":{
+"axis_title_x":{
+"color":"blue",
+"face":"bold",
+"blank":false
+},
+"axis_title_y":{
+"color":"blue",
+"face":"bold",
+"blank":false
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"point",
+"mapping":{
+"colour":"Pos"
+},
+"data_meta":{
+},
+"data":{
+}
+},{
+"geom":"label",
+"mapping":{
+},
+"data_meta":{
+},
+"x":14.0,
+"y":121.0,
+"label":"Kucherov",
+"color":"black",
+"data":{
+}
+},{
+"geom":"point",
+"data":{
+"PTS":[121.0],
+"+/-":[22.0]
+},
+"mapping":{
+"x":"+/-",
+"y":"PTS"
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"Rk"
+},{
+"type":"str",
+"column":"Player"
+},{
+"type":"int",
+"column":"Age"
+},{
+"type":"str",
+"column":"Team"
+},{
+"type":"str",
+"column":"Pos"
+},{
+"type":"int",
+"column":"GP"
+},{
+"type":"int",
+"column":"G"
+},{
+"type":"int",
+"column":"A"
+},{
+"type":"int",
+"column":"PTS"
+},{
+"type":"int",
+"column":"+/-"
+},{
+"type":"int",
+"column":"PIM"
+},{
+"type":"int",
+"column":"EVG"
+},{
+"type":"int",
+"column":"PPG"
+},{
+"type":"int",
+"column":"SHG"
+},{
+"type":"int",
+"column":"GWG"
+},{
+"type":"int",
+"column":"EV"
+},{
+"type":"int",
+"column":"PP"
+},{
+"type":"int",
+"column":"SH"
+},{
+"type":"int",
+"column":"SOG"
+},{
+"type":"float",
+"column":"SPCT"
+},{
+"type":"int",
+"column":"TSA"
+},{
+"type":"str",
+"column":"TOI"
+},{
+"type":"str",
+"column":"ATOI"
+},{
+"type":"int",
+"column":"FOW"
+},{
+"type":"int",
+"column":"FOL"
+},{
+"type":"float",
+"column":"FO%"
+},{
+"type":"int",
+"column":"BLK"
+},{
+"type":"int",
+"column":"HIT"
+},{
+"type":"int",
+"column":"TAKE"
+},{
+"type":"int",
+"column":"GIVE"
+},{
+"type":"str",
+"column":"Awards"
+},{
+"type":"str",
+"column":"-9999"
+}]
+},
+"color":"black",
+"shape":17.0,
+"size":5.0
+}],
+"metainfo_list":[],
+"spec_id":"4"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Model</li>
+</ol>
+<div id="32b2f304" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> stats[<span class="st">"+/-"</span>]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> stats[<span class="st">"PTS"</span>]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add constant term for intercept</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(y, X).fit()</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    PTS   R-squared:                       0.061
+Model:                            OLS   Adj. R-squared:                  0.056
+Method:                 Least Squares   F-statistic:                     12.79
+Date:                Sun, 08 Jun 2025   Prob (F-statistic):           0.000439
+Time:                        23:37:43   Log-Likelihood:                -838.33
+No. Observations:                 200   AIC:                             1681.
+Df Residuals:                     198   BIC:                             1687.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         59.0134      1.151     51.278      0.000      56.744      61.283
++/-            0.2610      0.073      3.576      0.000       0.117       0.405
+==============================================================================
+Omnibus:                       22.325   Durbin-Watson:                   0.137
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               26.200
+Skew:                           0.855   Prob(JB):                     2.05e-06
+Kurtosis:                       3.467   Cond. No.                         16.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+<p>We see that there is a linear relationship between +/- and PTS, as it has a co-efficient of 0.261, and a p-value of 0, which implies that there is indeed a correlation between the two variates.</p>
+<p><strong>ASSIGNMENT 3</strong></p>
+<p>1.Tidy</p>
+<div id="e21e0329" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> pd.read_csv(<span class="st">"nhl_players_2025.csv"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Rk</th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Pos</th>
+<th data-quarto-table-cell-role="th">GP</th>
+<th data-quarto-table-cell-role="th">G</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">PTS</th>
+<th data-quarto-table-cell-role="th">+/-</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">ATOI</th>
+<th data-quarto-table-cell-role="th">FOW</th>
+<th data-quarto-table-cell-role="th">FOL</th>
+<th data-quarto-table-cell-role="th">FO%</th>
+<th data-quarto-table-cell-role="th">BLK</th>
+<th data-quarto-table-cell-role="th">HIT</th>
+<th data-quarto-table-cell-role="th">TAKE</th>
+<th data-quarto-table-cell-role="th">GIVE</th>
+<th data-quarto-table-cell-role="th">Awards</th>
+<th data-quarto-table-cell-role="th">-9999</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Nikita Kucherov</td>
+<td>31</td>
+<td>TBL</td>
+<td>RW</td>
+<td>78</td>
+<td>37</td>
+<td>84</td>
+<td>121</td>
+<td>22</td>
+<td>...</td>
+<td>21:11</td>
+<td>1</td>
+<td>1</td>
+<td>50.0</td>
+<td>33</td>
+<td>23</td>
+<td>30</td>
+<td>122</td>
+<td>Ross-1</td>
+<td>kucheni01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Nathan MacKinnon</td>
+<td>29</td>
+<td>COL</td>
+<td>C</td>
+<td>79</td>
+<td>32</td>
+<td>84</td>
+<td>116</td>
+<td>25</td>
+<td>...</td>
+<td>22:47</td>
+<td>756</td>
+<td>758</td>
+<td>49.9</td>
+<td>58</td>
+<td>38</td>
+<td>27</td>
+<td>121</td>
+<td>NaN</td>
+<td>mackina01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Leon Draisaitl</td>
+<td>29</td>
+<td>EDM</td>
+<td>C</td>
+<td>71</td>
+<td>52</td>
+<td>54</td>
+<td>106</td>
+<td>32</td>
+<td>...</td>
+<td>21:31</td>
+<td>650</td>
+<td>546</td>
+<td>54.3</td>
+<td>27</td>
+<td>23</td>
+<td>35</td>
+<td>88</td>
+<td>Richard-1</td>
+<td>draisle01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>David Pastrňák</td>
+<td>28</td>
+<td>BOS</td>
+<td>RW</td>
+<td>82</td>
+<td>43</td>
+<td>63</td>
+<td>106</td>
+<td>0</td>
+<td>...</td>
+<td>20:11</td>
+<td>3</td>
+<td>5</td>
+<td>37.5</td>
+<td>24</td>
+<td>58</td>
+<td>40</td>
+<td>118</td>
+<td>NaN</td>
+<td>pastrda01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Mitch Marner</td>
+<td>27</td>
+<td>TOR</td>
+<td>RW</td>
+<td>81</td>
+<td>27</td>
+<td>75</td>
+<td>102</td>
+<td>18</td>
+<td>...</td>
+<td>21:19</td>
+<td>10</td>
+<td>24</td>
+<td>29.4</td>
+<td>40</td>
+<td>49</td>
+<td>56</td>
+<td>106</td>
+<td>NaN</td>
+<td>marnemi01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>196</td>
+<td>Casey Mittelstadt</td>
+<td>26</td>
+<td>2TM</td>
+<td>C</td>
+<td>81</td>
+<td>15</td>
+<td>25</td>
+<td>40</td>
+<td>-29</td>
+<td>...</td>
+<td>17:04</td>
+<td>443</td>
+<td>560</td>
+<td>44.2</td>
+<td>33</td>
+<td>30</td>
+<td>19</td>
+<td>80</td>
+<td>NaN</td>
+<td>mitteca01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>197</td>
+<td>Jake Walman</td>
+<td>28</td>
+<td>2TM</td>
+<td>D</td>
+<td>65</td>
+<td>7</td>
+<td>33</td>
+<td>40</td>
+<td>4</td>
+<td>...</td>
+<td>22:46</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>145</td>
+<td>57</td>
+<td>27</td>
+<td>80</td>
+<td>NaN</td>
+<td>walmaja01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>198</td>
+<td>Reilly Smith</td>
+<td>33</td>
+<td>2TM</td>
+<td>RW</td>
+<td>79</td>
+<td>13</td>
+<td>27</td>
+<td>40</td>
+<td>10</td>
+<td>...</td>
+<td>15:26</td>
+<td>4</td>
+<td>7</td>
+<td>36.4</td>
+<td>41</td>
+<td>48</td>
+<td>26</td>
+<td>70</td>
+<td>NaN</td>
+<td>smithre01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>199</td>
+<td>Blake Coleman</td>
+<td>33</td>
+<td>CGY</td>
+<td>C</td>
+<td>82</td>
+<td>15</td>
+<td>24</td>
+<td>39</td>
+<td>-2</td>
+<td>...</td>
+<td>17:41</td>
+<td>38</td>
+<td>41</td>
+<td>48.1</td>
+<td>66</td>
+<td>176</td>
+<td>31</td>
+<td>78</td>
+<td>NaN</td>
+<td>colembl01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>200</td>
+<td>Noah Dobson</td>
+<td>25</td>
+<td>NYI</td>
+<td>D</td>
+<td>71</td>
+<td>10</td>
+<td>29</td>
+<td>39</td>
+<td>-16</td>
+<td>...</td>
+<td>23:16</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>126</td>
+<td>57</td>
+<td>36</td>
+<td>108</td>
+<td>NaN</td>
+<td>dobsono01</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 32 columns</p>
+</div>
+</div>
+</div>
+<p>Yes, the data is tidy. We see that: - each variable is a column, each column is a variable - each observation is a row, each row is an observation - each value is a cell; each cell is a single value</p>
+<div id="4bd672c7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> stats[[<span class="st">'Player'</span>, <span class="st">'G'</span>, <span class="st">'A'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This data is in a wide format. I will convert the above subset into a long format.</p>
+<div id="dd71dc9c" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>stats.melt(id_vars<span class="op">=</span>[<span class="st">"Player"</span>], var_name <span class="op">=</span> <span class="st">"quanitity"</span>, value_vars <span class="op">=</span> [<span class="st">'G'</span>, <span class="st">'A'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">quanitity</th>
+<th data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Nikita Kucherov</td>
+<td>G</td>
+<td>37</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Nathan MacKinnon</td>
+<td>G</td>
+<td>32</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Leon Draisaitl</td>
+<td>G</td>
+<td>52</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>David Pastrňák</td>
+<td>G</td>
+<td>43</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Mitch Marner</td>
+<td>G</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">395</td>
+<td>Casey Mittelstadt</td>
+<td>A</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">396</td>
+<td>Jake Walman</td>
+<td>A</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">397</td>
+<td>Reilly Smith</td>
+<td>A</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">398</td>
+<td>Blake Coleman</td>
+<td>A</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">399</td>
+<td>Noah Dobson</td>
+<td>A</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+
+<p>400 rows × 3 columns</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Transform</li>
+</ol>
+<p>Q1</p>
+<div id="bcea7a0e" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>stats[<span class="st">'Player'</span>] <span class="op">=</span> stats[<span class="st">'Player'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> name: re.sub(<span class="vs">r"</span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>, <span class="kw">lambda</span> x: x.group(<span class="dv">1</span>).upper(), name))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Rk</th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Pos</th>
+<th data-quarto-table-cell-role="th">GP</th>
+<th data-quarto-table-cell-role="th">G</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">PTS</th>
+<th data-quarto-table-cell-role="th">+/-</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">ATOI</th>
+<th data-quarto-table-cell-role="th">FOW</th>
+<th data-quarto-table-cell-role="th">FOL</th>
+<th data-quarto-table-cell-role="th">FO%</th>
+<th data-quarto-table-cell-role="th">BLK</th>
+<th data-quarto-table-cell-role="th">HIT</th>
+<th data-quarto-table-cell-role="th">TAKE</th>
+<th data-quarto-table-cell-role="th">GIVE</th>
+<th data-quarto-table-cell-role="th">Awards</th>
+<th data-quarto-table-cell-role="th">-9999</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Nikita KUCHEROV</td>
+<td>31</td>
+<td>TBL</td>
+<td>RW</td>
+<td>78</td>
+<td>37</td>
+<td>84</td>
+<td>121</td>
+<td>22</td>
+<td>...</td>
+<td>21:11</td>
+<td>1</td>
+<td>1</td>
+<td>50.0</td>
+<td>33</td>
+<td>23</td>
+<td>30</td>
+<td>122</td>
+<td>Ross-1</td>
+<td>kucheni01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>Nathan MACKINNON</td>
+<td>29</td>
+<td>COL</td>
+<td>C</td>
+<td>79</td>
+<td>32</td>
+<td>84</td>
+<td>116</td>
+<td>25</td>
+<td>...</td>
+<td>22:47</td>
+<td>756</td>
+<td>758</td>
+<td>49.9</td>
+<td>58</td>
+<td>38</td>
+<td>27</td>
+<td>121</td>
+<td>NaN</td>
+<td>mackina01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Leon DRAISAITL</td>
+<td>29</td>
+<td>EDM</td>
+<td>C</td>
+<td>71</td>
+<td>52</td>
+<td>54</td>
+<td>106</td>
+<td>32</td>
+<td>...</td>
+<td>21:31</td>
+<td>650</td>
+<td>546</td>
+<td>54.3</td>
+<td>27</td>
+<td>23</td>
+<td>35</td>
+<td>88</td>
+<td>Richard-1</td>
+<td>draisle01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>David PASTRŇÁK</td>
+<td>28</td>
+<td>BOS</td>
+<td>RW</td>
+<td>82</td>
+<td>43</td>
+<td>63</td>
+<td>106</td>
+<td>0</td>
+<td>...</td>
+<td>20:11</td>
+<td>3</td>
+<td>5</td>
+<td>37.5</td>
+<td>24</td>
+<td>58</td>
+<td>40</td>
+<td>118</td>
+<td>NaN</td>
+<td>pastrda01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Mitch MARNER</td>
+<td>27</td>
+<td>TOR</td>
+<td>RW</td>
+<td>81</td>
+<td>27</td>
+<td>75</td>
+<td>102</td>
+<td>18</td>
+<td>...</td>
+<td>21:19</td>
+<td>10</td>
+<td>24</td>
+<td>29.4</td>
+<td>40</td>
+<td>49</td>
+<td>56</td>
+<td>106</td>
+<td>NaN</td>
+<td>marnemi01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>196</td>
+<td>Casey MITTELSTADT</td>
+<td>26</td>
+<td>2TM</td>
+<td>C</td>
+<td>81</td>
+<td>15</td>
+<td>25</td>
+<td>40</td>
+<td>-29</td>
+<td>...</td>
+<td>17:04</td>
+<td>443</td>
+<td>560</td>
+<td>44.2</td>
+<td>33</td>
+<td>30</td>
+<td>19</td>
+<td>80</td>
+<td>NaN</td>
+<td>mitteca01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>197</td>
+<td>Jake WALMAN</td>
+<td>28</td>
+<td>2TM</td>
+<td>D</td>
+<td>65</td>
+<td>7</td>
+<td>33</td>
+<td>40</td>
+<td>4</td>
+<td>...</td>
+<td>22:46</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>145</td>
+<td>57</td>
+<td>27</td>
+<td>80</td>
+<td>NaN</td>
+<td>walmaja01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>198</td>
+<td>Reilly SMITH</td>
+<td>33</td>
+<td>2TM</td>
+<td>RW</td>
+<td>79</td>
+<td>13</td>
+<td>27</td>
+<td>40</td>
+<td>10</td>
+<td>...</td>
+<td>15:26</td>
+<td>4</td>
+<td>7</td>
+<td>36.4</td>
+<td>41</td>
+<td>48</td>
+<td>26</td>
+<td>70</td>
+<td>NaN</td>
+<td>smithre01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>199</td>
+<td>Blake COLEMAN</td>
+<td>33</td>
+<td>CGY</td>
+<td>C</td>
+<td>82</td>
+<td>15</td>
+<td>24</td>
+<td>39</td>
+<td>-2</td>
+<td>...</td>
+<td>17:41</td>
+<td>38</td>
+<td>41</td>
+<td>48.1</td>
+<td>66</td>
+<td>176</td>
+<td>31</td>
+<td>78</td>
+<td>NaN</td>
+<td>colembl01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>200</td>
+<td>Noah DOBSON</td>
+<td>25</td>
+<td>NYI</td>
+<td>D</td>
+<td>71</td>
+<td>10</td>
+<td>29</td>
+<td>39</td>
+<td>-16</td>
+<td>...</td>
+<td>23:16</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>126</td>
+<td>57</td>
+<td>36</td>
+<td>108</td>
+<td>NaN</td>
+<td>dobsono01</td>
+</tr>
+</tbody>
+</table>
+
+<p>200 rows × 32 columns</p>
+</div>
+</div>
+</div>
+<p>Q2</p>
+<p>There are no dates or times in this dataset</p>
+<p>Q3</p>
+<div id="f002fb75" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>stats.columns[stats.isna().<span class="bu">any</span>()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>Index(['FO%', 'Awards'], dtype='object')</code></pre>
+</div>
+</div>
+<p>We see that the oonly columns with missing values are FO% and Awards. These are present for players who havent taken a faceoff during the season (hence Faceoff % is NA), and players who woin no awards.</p>
+<p>Q4</p>
+<p>We will filter to find all players who only played for the Leafs during this season.</p>
+<div id="ab1566d0" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>stats[stats[<span class="st">"Team"</span>] <span class="op">==</span> <span class="st">"TOR"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Rk</th>
+<th data-quarto-table-cell-role="th">Player</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Pos</th>
+<th data-quarto-table-cell-role="th">GP</th>
+<th data-quarto-table-cell-role="th">G</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">PTS</th>
+<th data-quarto-table-cell-role="th">+/-</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">ATOI</th>
+<th data-quarto-table-cell-role="th">FOW</th>
+<th data-quarto-table-cell-role="th">FOL</th>
+<th data-quarto-table-cell-role="th">FO%</th>
+<th data-quarto-table-cell-role="th">BLK</th>
+<th data-quarto-table-cell-role="th">HIT</th>
+<th data-quarto-table-cell-role="th">TAKE</th>
+<th data-quarto-table-cell-role="th">GIVE</th>
+<th data-quarto-table-cell-role="th">Awards</th>
+<th data-quarto-table-cell-role="th">-9999</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Mitch MARNER</td>
+<td>27</td>
+<td>TOR</td>
+<td>RW</td>
+<td>81</td>
+<td>27</td>
+<td>75</td>
+<td>102</td>
+<td>18</td>
+<td>...</td>
+<td>21:19</td>
+<td>10</td>
+<td>24</td>
+<td>29.4</td>
+<td>40</td>
+<td>49</td>
+<td>56</td>
+<td>106</td>
+<td>NaN</td>
+<td>marnemi01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>18</td>
+<td>William NYLANDER</td>
+<td>28</td>
+<td>TOR</td>
+<td>C</td>
+<td>82</td>
+<td>45</td>
+<td>39</td>
+<td>84</td>
+<td>10</td>
+<td>...</td>
+<td>19:31</td>
+<td>76</td>
+<td>77</td>
+<td>49.7</td>
+<td>27</td>
+<td>14</td>
+<td>28</td>
+<td>79</td>
+<td>NaN</td>
+<td>nylanwi01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29</td>
+<td>30</td>
+<td>Auston MATTHEWS</td>
+<td>27</td>
+<td>TOR</td>
+<td>C</td>
+<td>67</td>
+<td>33</td>
+<td>45</td>
+<td>78</td>
+<td>11</td>
+<td>...</td>
+<td>20:28</td>
+<td>695</td>
+<td>528</td>
+<td>56.8</td>
+<td>89</td>
+<td>45</td>
+<td>29</td>
+<td>62</td>
+<td>NaN</td>
+<td>matthau01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35</td>
+<td>36</td>
+<td>John TAVARES</td>
+<td>34</td>
+<td>TOR</td>
+<td>C</td>
+<td>75</td>
+<td>38</td>
+<td>36</td>
+<td>74</td>
+<td>10</td>
+<td>...</td>
+<td>18:14</td>
+<td>762</td>
+<td>546</td>
+<td>58.3</td>
+<td>45</td>
+<td>92</td>
+<td>24</td>
+<td>69</td>
+<td>NaN</td>
+<td>tavarjo01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">89</td>
+<td>90</td>
+<td>Matthew KNIES</td>
+<td>22</td>
+<td>TOR</td>
+<td>LW</td>
+<td>78</td>
+<td>29</td>
+<td>29</td>
+<td>58</td>
+<td>7</td>
+<td>...</td>
+<td>18:31</td>
+<td>0</td>
+<td>1</td>
+<td>0.0</td>
+<td>41</td>
+<td>182</td>
+<td>14</td>
+<td>51</td>
+<td>NaN</td>
+<td>kniesma01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">184</td>
+<td>185</td>
+<td>Morgan RIELLY</td>
+<td>30</td>
+<td>TOR</td>
+<td>D</td>
+<td>82</td>
+<td>7</td>
+<td>34</td>
+<td>41</td>
+<td>-8</td>
+<td>...</td>
+<td>21:23</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>131</td>
+<td>21</td>
+<td>20</td>
+<td>99</td>
+<td>NaN</td>
+<td>riellmo01</td>
+</tr>
+</tbody>
+</table>
+
+<p>6 rows × 32 columns</p>
+</div>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
